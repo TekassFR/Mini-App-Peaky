@@ -93,7 +93,7 @@
         "emoji": "🍫",
         "image": "https://i.imgur.com/mIwuKCB.jpeg",
         "category": "pizza",
-        "isNew": true,
+        "isNew": false,
         "isPromo": true,
         "video": "https://i.imgur.com/0Kid5k8.mp4",
         "customPrices": {
