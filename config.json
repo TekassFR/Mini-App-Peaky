@@ -17,11 +17,6 @@
       "emoji": "🌿",
       "description": "Nos produits en Weed"
     },
-    "dessert": {
-      "name": "Brun",
-      "emoji": "💉",
-      "description": "Nos produits en brun"
-    },
     "boisson": {
       "name": "Festif",
       "emoji": "🎉",
@@ -62,8 +57,12 @@
         "isPromo": false,
         "video": "https://i.imgur.com/9mYahNY.mp4",
         "customPrices": {
-          "4": 40.00,
-          "10": 80.00
+          "3": 20.00,
+          "4.5": 30.00,
+          "10": 60.00,
+          "20": 110.00,
+          "50": 220.00,
+          "100": 380.00
         }
       },
       {
@@ -78,8 +77,12 @@
         "isPromo": false,
         "video": "https://i.imgur.com/brZ8x7m.mp4",
         "customPrices": {
+          "2.5": 20.00,
           "5": 40.00,
-          "10": 80.00
+          "10": 70.00,
+          "20": 130.00,
+          "50": 250.00,
+          "100": 480.00
         }
       },
       {
@@ -94,8 +97,12 @@
         "isPromo": true,
         "video": "https://i.imgur.com/0Kid5k8.mp4",
         "customPrices": {
-          "5": 40.00,
-          "10": 80.00
+          "5": 20.00,
+          "10": 30.00,
+          "25": 70.00,
+          "50": 120.00,
+          "100": 220.00,
+          "200": 440.00
         }
       }
     ],
@@ -154,9 +161,12 @@
         "isPromo": false,
         "video": "https://i.imgur.com/ricNHc4.mp4",
         "customPrices": {
-          "1": 50.00,
-          "2": 90.00,
-          "5": 250.00
+          "0.5": 30.00,
+          "1": 60.00,
+          "2": 100.00,
+          "5": 160.00,
+          "10": 300.00,
+          "20": 580.00
         }
       },
       {
