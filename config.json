@@ -32,11 +32,11 @@
     "pizza": [
       {
         "id": 1,
-        "name": "RS x Sour",
-        "description": "RS11 x Sour Face Cette variété offre une expérience unique en réunissant les profils de saveurs et les effets caractéristiques de ses parents.",
+        "name": "RS4 MOUSSE",
+        "description": "Réel jaune mousse RS4 pas de goût, odeur bizarre tout frais.",
         "price": 10,
         "emoji": "🍫",
-        "image": "https://i.ibb.co/cXZWmF36/photo-5944882891634887167-y.jpg",
+        "image": "https://i.imgur.com/aSQv6w9.jpeg",
         "category": "pizza",
         "isNew": true,
         "isPromo": false,
@@ -49,15 +49,31 @@
       },
       {
         "id": 2,
-        "name": "Static Skittlez",
-        "description": "La Zkittlez, parfois aussi appelé Skittlez ou simplement Skittles, est un hybride à dominance indica qui regorge de saveurs fruitées.",
+        "name": "Static NO FARM",
+        "description": "Static Smoke Weed Everyday, un Static NO FARM avec de réels terps, odeurs/goût magique.",
         "price": 10.00,
         "emoji": "🍫",
-        "image": "https://i.ibb.co/hFSx3x07/photo-5944882891634887197-y.jpg",
+        "image": "https://i.imgur.com/b2nuu63.jpeg",
         "category": "pizza",
         "isNew": true,
         "isPromo": false,
-        "video": "https://i.imgur.com/ZQYvS0G.mp4",
+        "video": "https://i.imgur.com/9mYahNY.mp4",
+        "customPrices": {
+          "5": 40.00,
+          "10": 80.00
+        }
+      },
+      {
+        "id": 3,
+        "name": "Fresh Frozen",
+        "description": "Fresh Frozen NO FARM, un réel Frozen avec de bonne terps comme les gens aiment.",
+        "price": 10.00,
+        "emoji": "🍫",
+        "image": "https://i.imgur.com/QJ4ZWVo.jpeg",
+        "category": "pizza",
+        "isNew": true,
+        "isPromo": false,
+        "video": "https://i.imgur.com/brZ8x7m.mp4",
         "customPrices": {
           "5": 40.00,
           "10": 80.00
@@ -75,7 +91,7 @@
         "category": "pasta",
         "isNew": true,
         "isPromo": false,
-        "video": "https://i.imgur.com/iqwmLgx.mp4",
+        "video": "https://i.imgur.com/f3Tz9xg.mp4",
         "customPrices": {
           "2": 30.00,
           "5": 60.00,
@@ -85,15 +101,15 @@
       },
       {
         "id": 5,
-        "name": "Pineapple Express",
-        "description": "Tous les fumeurs du monde entier ont entendu parler de Pineapple Express, grâce au film comique de 2008 du même nom (Délire Express en VF).",
+        "name": "Amnesia Coffee",
+        "description": "Amnesia Coffee à ne pas comparer au Amnesia locale qui tourne, c'est de la vraie tout droit du CoffeeShop.",
         "price": 15.00,
         "emoji": "🌿",
-        "image": "https://i.ibb.co/0Rjn8XPg/photo-5944882891634887171-y.jpg",
+        "image": "https://i.imgur.com/x2kIcpK.jpeg",
         "category": "pasta",
         "isNew": true,
         "isPromo": false,
-        "video": "https://i.imgur.com/5YqXJFG.mp4",
+        "video": "https://i.imgur.com/tYaFwR0.mp4",
         "customPrices": {
           "2": 30.00,
           "5": 60.00,
