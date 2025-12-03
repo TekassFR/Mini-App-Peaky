@@ -8,8 +8,8 @@ from telegram import Update, WebAppInfo, InlineKeyboardButton, InlineKeyboardMar
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # Configuration sécurisée
-BOT_TOKEN = "7681249591:AAHpn2Vt91sKI7abIWo-0NUQl_yqy7nZv_8"
-WEB_APP_URL = "https://coruscating-sunflower-28af83.netlify.app"
+BOT_TOKEN = "8085521442:AAF4NTocF5npu4wAZdfEmK69IhBhsL12fso"
+WEB_APP_URL = "https://mini-app-french.vercel.app"
 
 # Variables de sécurité intégrées
 SECURITY_CONFIG = {
