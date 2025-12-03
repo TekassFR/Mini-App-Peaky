@@ -122,7 +122,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Créer un clavier inline avec plusieurs options - Canal et Contact en haut, Carte mise en valeur en bas
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📢 Canal Officiel", url="https://t.me/+1ucagzAd9_YxZDE0"), 
+        [InlineKeyboardButton("📢 Canal Officiel", url="https://dympt.org/joinchat/JuLVf6_RWUB23gDjNMd44Q"), 
          InlineKeyboardButton("💬 Nous contacter", url="https://t.me/LEMIEL54")],
         [InlineKeyboardButton("📖 VOIR LA CARTE 📖", web_app=web_app)]
     ])
