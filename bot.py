@@ -16,7 +16,7 @@ SECURITY_CONFIG = {
     'MAX_REQUESTS_PER_HOUR': 100,
     'RATE_LIMIT_WINDOW': 3600,
     'MAX_MESSAGE_LENGTH': 1000,
-    'ALLOWED_DOMAINS': ['telegram.org', 't.me', 'netlify.app'],
+    'ALLOWED_DOMAINS': ['telegram.org', 't.me', 'vercel.app'],
     'BLOCKED_KEYWORDS': ['script', 'javascript', 'eval', 'function', 'alert']
 }
 
@@ -123,14 +123,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Créer un clavier inline avec plusieurs options - Canal et Contact en haut, Carte mise en valeur en bas
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("📢 Canal Officiel", url="https://t.me/+1ucagzAd9_YxZDE0"), 
-         InlineKeyboardButton("💬 Nous contacter", url="https://t.me/peakyblinders540")],
+         InlineKeyboardButton("💬 Nous contacter", url="https://t.me/LEMIEL54")],
         [InlineKeyboardButton("📖 VOIR LA CARTE 📖", web_app=web_app)]
     ])
     
     # Message d'accueil avec image et texte simplifié
     await update.message.reply_photo(
-        photo="https://i.ibb.co/M5Pc919N/photo-5944882891634887258-y.jpg",
-        caption="*💎 Bienvenue chez Peaky !*\n\nSi vous souhaitez faire une commande ou nous contacter, utilisez les options ci-dessous.",
+        photo="blob:https://imgur.com/3cb15440-0de0-4686-8a96-ba1c782a4fde",
+        caption="*💎 Bienvenue chez LeMiel !*\n\nSi vous souhaitez faire une commande ou nous contacter, utilisez les options ci-dessous.",
         parse_mode="Markdown",
         reply_markup=keyboard
     )
@@ -205,7 +205,7 @@ def main():
         application.add_handler(CommandHandler("menu", menu))
         application.add_handler(CommandHandler("security", security_status))
         
-        logging.info("🛡️ Bot Peaky démarré avec sécurité renforcée")
+        logging.info("🛡️ Bot LeMiel démarré avec sécurité renforcée")
         
         # Démarrer le bot avec des paramètres explicites
         application.run_polling(allowed_updates=["message", "callback_query"])
