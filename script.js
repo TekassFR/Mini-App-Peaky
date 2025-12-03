@@ -53,8 +53,8 @@
     
     // Validation des quantités
     function validateQuantity(qty) {
-        const num = parseInt(qty);
-        return num > 0 && num <= SECURITY_CONFIG.MAX_ITEM_QUANTITY ? num : 1;
+        const num = parseFloat(String(qty).replace(',', '.'));
+        return num > 0 && num <= SECURITY_CONFIG.MAX_ITEM_QUANTITY && Number.isFinite(num) ? num : 1;
     }
     
     // Protection contre les manipulations DOM
@@ -143,7 +143,7 @@
 
 // Code principal de l'application
 const tg = window.Telegram.WebApp;
-const restaurantUsername = 'peakyblinders540'; // Votre username sans @
+const restaurantUsername = 'LEMIEL54'; // Votre username sans @
 
 // Configuration initiale
 tg.ready();
@@ -165,6 +165,19 @@ async function loadConfig() {
         // Stocker les données globalement
         restaurantConfig = config.restaurant;
         menuData = config.products;
+        Object.keys(menuData).forEach(cat => {
+            menuData[cat] = menuData[cat].map(p => {
+                if (p.customPrices) {
+                    const normalized = {};
+                    Object.entries(p.customPrices).forEach(([k, v]) => {
+                        const nk = String(k).replace(',', '.');
+                        normalized[nk] = v;
+                    });
+                    p.customPrices = normalized;
+                }
+                return p;
+            });
+        });
         
         console.log('Configuration chargée avec succès');
         return config;
@@ -481,16 +494,22 @@ function adjustDetailImageDisplay(img) {
     }
     
     const aspectRatio = img.naturalWidth / img.naturalHeight;
-    
-    // Supprimer les classes existantes
     img.classList.remove('fit-cover', 'fit-contain', 'fit-fill', 'fit-scale-down');
+    img.classList.add('fit-contain');
+    img.style.width = '100%';
+    img.style.height = 'auto';
+    img.style.maxHeight = '65vh';
     
-    // Pour les images de détail, utiliser contain pour les portraits et cover pour le reste
-    if (aspectRatio < 0.9) {
-        img.classList.add('fit-contain');
-        img.style.height = '300px'; // Augmenter la hauteur pour les images portrait
-    } else {
-        img.classList.add('fit-contain'); // Utiliser contain par défaut pour éviter la coupure
+    const container = img.closest('.product-detail-image');
+    if (container) {
+        container.classList.remove('portrait', 'landscape', 'square');
+        if (aspectRatio < 0.8) {
+            container.classList.add('portrait');
+        } else if (aspectRatio > 1.2) {
+            container.classList.add('landscape');
+        } else {
+            container.classList.add('square');
+        }
     }
 }
 
@@ -622,24 +641,22 @@ function openProductDetail(productId) {
         quantityBubblesContainer.innerHTML = '';
         
         // Obtenir les quantités disponibles depuis customPrices
-        const availableQuantities = Object.keys(product.customPrices)
-            .map(qty => parseInt(qty))
-            .sort((a, b) => a - b); // Trier par ordre croissant
-        
-        // Créer les boutons pour chaque quantité disponible
-        availableQuantities.forEach(qty => {
-            const price = product.customPrices[qty].toFixed(2);
-            
+        const entries = Object.entries(product.customPrices)
+            .map(([key, val]) => {
+                const qty = parseFloat(String(key).replace(',', '.'));
+                return { qty, price: parseFloat(val) };
+            })
+            .filter(e => e.qty > 0 && Number.isFinite(e.qty) && Number.isFinite(e.price))
+            .sort((a, b) => a.qty - b.qty);
+        entries.forEach(({ qty, price }) => {
             const bubbleDiv = document.createElement('div');
             bubbleDiv.className = 'quantity-bubble';
             bubbleDiv.setAttribute('data-qty', qty);
             bubbleDiv.onclick = () => addToCartWithQuantity(currentProductId, qty);
-            
             bubbleDiv.innerHTML = `
                 <span class="bubble-qty">${qty}g</span>
-                <span class="bubble-price">${price}€</span>
+                <span class="bubble-price">${price.toFixed(2)}€</span>
             `;
-            
             quantityBubblesContainer.appendChild(bubbleDiv);
         });
     } else {
@@ -1403,7 +1420,7 @@ async function checkout() {
     // Validation des articles du panier
     const validCart = cart.filter(item => {
         const validPrice = parseFloat(item.price) > 0;
-        const validQuantity = parseInt(item.quantity) > 0;
+        const validQuantity = parseFloat(item.quantity) > 0;
         const validName = item.name && item.name.trim().length > 0;
         
         return validPrice && validQuantity && validName;
