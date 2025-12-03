@@ -129,7 +129,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Message d'accueil avec image et texte simplifié
     await update.message.reply_photo(
-        photo="blob:https://imgur.com/3cb15440-0de0-4686-8a96-ba1c782a4fde",
+        photo="https://i.imgur.com/GVwoTpK.jpeg",
         caption="*💎 Bienvenue chez LeMiel !*\n\nSi vous souhaitez faire une commande ou nous contacter, utilisez les options ci-dessous.",
         parse_mode="Markdown",
         reply_markup=keyboard
