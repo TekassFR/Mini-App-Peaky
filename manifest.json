@@ -21,7 +21,7 @@
       }
     ],
     "telegram": {
-      "bot_username": "TestMenuResto_bot",
-      "web_app_url": "https://coruscating-sunflower-28af83.netlify.app"
+      "bot_username": "miniapplemieltest_bot",
+      "web_app_url": "https://mini-app-peaky-3ehb.vercel.app"
     }
   }
