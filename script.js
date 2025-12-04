@@ -1590,7 +1590,7 @@ function initBottomNavigation() {
                 case 'canal':
                     // Ouvrir le canal Telegram
                     if (window.Telegram && window.Telegram.WebApp) {
-                        window.Telegram.WebApp.openTelegramLink('https://t.me/+1ucagzAd9_YxZDE0');
+                        window.Telegram.WebApp.openTelegramLink('https://dympt.org/joinchat/JuLVf6_RWUB23gDjNMd44Q');
                     } else {
                         window.open('https://t.me/+1ucagzAd9_YxZDE0', '_blank');
                     }
